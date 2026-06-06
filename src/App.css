@@ -1,38 +1,462 @@
-.App {
-  text-align: center;
+:root {
+  --bg: #0d0a08;
+  --gold: #c8a25a;
+  --text: #f4f0e8;
+  --muted: #8d857c;
+  --border: rgba(200,162,90,.15);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background:
+    linear-gradient(rgba(200,162,90,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,162,90,.04) 1px, transparent 1px),
+    var(--bg);
+  background-size: 60px 60px;
+  color: var(--text);
+  font-family: Georgia, serif;
 }
 
-.App-header {
-  background-color: #282c34;
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+.portfolio-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #0d0a08;
+  border-bottom: 1px solid rgba(200,162,90,.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand-custom {
+  color: var(--gold);
+  letter-spacing: 5px;
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+.nav-links-custom {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link-custom {
+  color: var(--text);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link-custom:hover {
+  color: var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  margin-top: 0;
+}
+
+.tag {
+  color: var(--gold);
+  letter-spacing: 6px;
+  margin-bottom: 2rem;
+  font-size: .8rem;
+}
+
+.hero h1 {
+  font-size: 5.5rem;
+  font-weight: 250;
+}
+
+.hero span {
+  display: block;
+  color: #7d7168;
+  font-style: italic;
+}
+
+.hero-text {
+  max-width: 700px;
+  color: var(--muted);
+  margin: 2rem 0;
+}
+
+.gold-btn {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  padding: 15px 30px;
+  letter-spacing: 2px;
+  font-size: .85rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.gold-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ===== TOOTH ICON ===== */
+.tooth-icon {
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 30px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  font-size: .85rem;
+}
+
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.25);
+}
+
+/* ===== SERVICES ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card-box {
+  border: 1px solid var(--border);
+  padding: 30px;
+  transition: border-color 0.3s;
+}
+
+.card-box:hover {
+  border-color: var(--gold);
+}
+
+.card-box h3 {
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.card-box p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+.card-price {
+  margin-top: 16px;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.card-duration {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .8rem;
+  letter-spacing: 1px;
+}
+
+/* ===== TRAITEMENT ===== */
+.content-text {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 700px;
+  margin-bottom: 10px;
+  font-size: .95rem;
+}
+
+.treatment-steps {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.treatment-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.step-num {
+  min-width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.treatment-step strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.treatment-step p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.price-box {
+  margin-top: 30px;
+  border: 1px solid var(--border);
+  padding: 25px;
+}
+
+.price-main {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.price-note {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* ===== BOOKING ===== */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.booking-form select,
+.booking-form input {
+  padding: 15px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: .95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.booking-form select:focus,
+.booking-form input:focus {
+  border-color: var(--gold);
+}
+
+.booking-form select option {
+  background: #1a1510;
+  color: var(--text);
+}
+
+.booking-form button,
+.confirmation button {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold) !important;
+  padding: 15px !important;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: Georgia, serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+  width: fit-content;
+}
+
+.booking-form button:hover,
+.confirmation button:hover {
+  background: var(--gold) !important;
+  color: var(--bg) !important;
+}
+
+.booking-step-label {
+  font-size: .75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: -8px;
+}
+
+.booking-summary {
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ===== CONFIRMATION ===== */
+.confirmation {
+  border: 1px solid var(--gold);
+  padding: 40px;
+  max-width: 500px;
+}
+
+.confirmation h3 {
+  color: var(--gold);
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+
+.confirmation-icon {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.confirmation-details {
+  margin: 20px 0;
+}
+
+.confirmation-details p {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.confirmation-details p span:first-child {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .75rem;
+}
+
+.confirmation-note {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ===== CONTACT ===== */
+.contact-section {
+  padding: 60px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.contact-section h2 {
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+.contact-section h2 span {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.contact-subtitle {
+  margin-top: 20px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: .85rem;
+}
+
+.contact-info {
+  margin-top: 40px;
+}
+
+.contact-info p {
+  margin: 16px 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.contact-bottom {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: .8rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .portfolio-navbar {
+    padding: 16px 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links-custom {
+    gap: 16px;
+  }
+
+  .nav-link-custom {
+    font-size: .7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .confirmation {
+    padding: 24px;
   }
 }
