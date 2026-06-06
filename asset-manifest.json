@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sourire-plus/static/css/main.97e6ef5b.css",
+    "main.js": "/sourire-plus/static/js/main.a6d63f07.js",
+    "static/media/bootstrap-icons.woff?": "/sourire-plus/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
+    "static/media/bootstrap-icons.woff2?": "/sourire-plus/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "index.html": "/sourire-plus/index.html",
+    "main.97e6ef5b.css.map": "/sourire-plus/static/css/main.97e6ef5b.css.map",
+    "main.a6d63f07.js.map": "/sourire-plus/static/js/main.a6d63f07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97e6ef5b.css",
+    "static/js/main.a6d63f07.js"
+  ]
+}
